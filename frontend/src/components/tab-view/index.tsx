@@ -5,17 +5,12 @@ import { TabViewProps } from '@/components/tab-view/type';
 
 
 
-const TabView: React.FC<TabViewProps> = ({ tabs, activeIndex}) => {
+const TabView: React.FC<TabViewProps> = ({ tabs, activeSlug, onTabChange}) => {
 	const CN = new ClassNames('tabView');
-	const [tabIndex, setTabIndex] = useState<number>(0);
 
-	useEffect(() => {
-		setTabIndex(activeIndex);
-	}, []);
-
-	const handleClick = (index: number) => {
-		if (index !== tabIndex) {
-			setTabIndex(index);
+	const handleClick = (slug: string) => {
+		if (onTabChange) {
+			onTabChange(slug);
 		}
 	};
 
@@ -23,9 +18,9 @@ const TabView: React.FC<TabViewProps> = ({ tabs, activeIndex}) => {
 		<ul className={CN.generate()}>
 			{tabs.map((tab, index) => (
 				<li
-					key={index}
-					className={CN.generate('item', [{ 'active' : index === tabIndex }])}
-					onClick={() => handleClick(index)}
+					key={tab.slug}
+					className={CN.generate('item', [{ 'active' : tab.slug === activeSlug }])}
+					onClick={() => handleClick(tab.slug)}
 				>
 					{tab.title}
 				</li>
