@@ -1,2 +1,19 @@
 @use "sass:math";
 @import '@/styles/index';
+
+.deals {
+    &__bannerContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        color: #FFFFFF;
+
+        > h1 {
+            @include banner-title;
+        }
+        > p {
+            @include banner-description;
+        }
+    }
+}
