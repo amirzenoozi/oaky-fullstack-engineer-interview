@@ -1,0 +1,65 @@
+@import '@/styles/index';
+
+$baseClass: 'tabView';
+.#{$baseClass} {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: px-to-rem(16);
+    margin: px-to-rem(16);
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: color('grey');
+    }
+
+    &__item {
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+        padding: 0 px-to-rem(18) px-to-rem(14);
+        color: color('grey');
+        transition: all 0.12s ease-in-out;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 4px;
+            z-index: 1;
+            transform: translateX(-50%) translateY(1px);
+            background-color: color('primary');
+            transition: all 0.12s ease-in-out;
+        }
+
+        &--active {
+            color: color('black');
+
+            &::after {
+                left: 0;
+                width: 100%;
+                transform: translateY(1px);
+            }
+        }
+        &:not(.#{$baseClass}__item--active) {
+            &:hover {
+                color:  darken(color('grey'), 25%);
+
+                &::after {
+                    background-color: lighten(color('primary'), 10%);
+                    width: 20%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(1px);
+                }
+            }
+        }
+    }
+}
