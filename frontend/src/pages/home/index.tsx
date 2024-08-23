@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.scss';
 import BannerSection from '@/components/banner';
 import { useTranslation } from 'react-i18next';
@@ -8,6 +8,8 @@ import TabView from '@/components/tab-view';
 import Container from '@/components/container';
 import FlexRow from '@/components/flex-row';
 import FlexCol from '@/components/flex-col';
+import { DealCardProps } from '@/components/dealCard/type';
+import DealCard from '@/components/dealCard';
 
 
 function Home() {
@@ -32,6 +34,16 @@ function Home() {
 			disabled: false,
 		}
 	];
+	const Deals: DealCardProps[] = [
+		{
+			title: 'Romantic package',
+			description: 'Give your partner a fun surprise.',
+			price: 100,
+			image: 'https://s3-alpha-sig.figma.com/img/5fd8/92c7/4df526b14c8e2d2add92411befd00b53?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=WQFiqmoOcc8xSQF3UobAdOoXkLTk3izkz8d2~X3ooww80DtJecSfBc3OMSGFiWQIZScs0YHvBnBdtWzgnAJ5Y717DLzvydkPu7cjROH3Kdaic-7FBQS-XLtWs~LzTau4RNn58cP5FojvqjcfbZm2XcxcLq5pBr24gZ9pdOJqJsCzPtM4SueeqmGteEaIQN8qKxKnTIWxwZo5S3ZRIi2~R68RGFR06tXs0rWWZ0dPGfFmJZVw86OmZF1ucfDB0e4~TxkGLYDro6ihdOWGqyJz1O1QHqNvhG8M6B8H-4I9JpMHZL5UCIRu8gsWDRN46320J-bYNcsMtJz1IJJ0fVlpkQ__',
+			offPrice: 50,
+			tag: 'top deal',
+		}
+	]
 
 	const handleTabChange = (slug: string) => {
 		setActiveTab(slug);
@@ -54,7 +66,13 @@ function Home() {
 				</div>
 				<Container>
 					<FlexRow>
-						<FlexCol xs={12} sm={8} md={6}>Deal Card</FlexCol>
+						{
+							Deals.map((deal, index) => (
+								<FlexCol xs={12} sm={8} md={6} key={index}>
+									<DealCard {...deal} />
+								</FlexCol>
+							))
+						}
 					</FlexRow>
 				</Container>
 			</section>
