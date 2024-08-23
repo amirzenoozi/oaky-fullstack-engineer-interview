@@ -1,0 +1,11 @@
+@mixin banner-title {
+    font-size: px-to-rem(28);
+    line-height: px-to-rem(40);
+    font-weight: 700;
+}
+
+@mixin banner-description {
+    font-size: px-to-rem(15);
+    line-height: px-to-rem(24);
+    font-weight: 400;
+}
