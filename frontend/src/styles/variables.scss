@@ -18,6 +18,7 @@ $color-white: #FFFFFF;
 $color-black: #1A1A1A;
 $color-grey: #CED5D9;
 $color-grey-bg: #F1F1F1;
+$color-grey-txt: #808080;
 $color-green: #1AB117;
 
 $colors: (
@@ -26,5 +27,6 @@ $colors: (
         'black': $color-black,
         'grey': $color-grey,
         'grey-bg': $color-grey-bg,
+        'grey-txt': $color-grey-txt,
         'green': $color-green,
 );
