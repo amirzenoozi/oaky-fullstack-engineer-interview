@@ -3,12 +3,9 @@
 }
 
 body {
-    font-size: 14px;
+    font-size: 16px;
     position: relative;
 
-    @include respond-to(md) {
-        font-size: 14px;
-    }
     @include respond-to(xxl) {
         font-size: 18px;
     }
