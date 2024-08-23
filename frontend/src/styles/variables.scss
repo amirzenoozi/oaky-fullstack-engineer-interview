@@ -11,3 +11,18 @@ $breakpoints: (
         'xl': $breakpoint-xl,
         'xxl': $breakpoint-xxl,
 );
+
+
+$color-primary: #FF6A00;
+$color-white: #FFFFFF;
+$color-black: #1A1A1A;
+$color-grey: #CED5D9;
+$color-green: #1AB117;
+
+$colors: (
+        'primary': $color-primary,
+        'white': $color-white,
+        'black': $color-black,
+        'grey': $color-grey,
+        'green': $color-green,
+);
