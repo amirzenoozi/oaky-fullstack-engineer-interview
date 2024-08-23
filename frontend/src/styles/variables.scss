@@ -17,6 +17,7 @@ $color-primary: #FF6A00;
 $color-white: #FFFFFF;
 $color-black: #1A1A1A;
 $color-grey: #CED5D9;
+$color-grey-bg: #F1F1F1;
 $color-green: #1AB117;
 
 $colors: (
@@ -24,5 +25,6 @@ $colors: (
         'white': $color-white,
         'black': $color-black,
         'grey': $color-grey,
+        'grey-bg': $color-grey-bg,
         'green': $color-green,
 );
