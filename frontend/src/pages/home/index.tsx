@@ -3,6 +3,7 @@ import './style.scss';
 import BannerSection from '@/components/banner';
 import { useTranslation } from 'react-i18next';
 import { ClassNames } from '@/modules/classNames';
+import Btn from '@/components/btn';
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
 				<div className={CN.generate('bannerContent')}>
 					<h1>{ t('banner.title') }</h1>
 					<p>{ t('banner.description') }</p>
+					<Btn variant={'white'} text={t('banner.button')} />
 				</div>
 			</BannerSection>
 		</>
