@@ -1,0 +1,71 @@
+@import '@/styles/index';
+
+$baseClass: 'btn';
+
+.#{$baseClass} {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: px-to-rem(14) px-to-rem(28);
+    height: px-to-rem(50);
+    box-shadow: inherit;
+    border: 2px solid transparent;
+    font-size: px-to-rem(18);
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.12s ease-in-out;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border-radius: px-to-rem(250);
+
+    &--disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &--sm {
+        padding: px-to-rem(10) px-to-rem(20);
+        height: px-to-rem(40);
+    }
+    &--lg {
+        padding: px-to-rem(18) px-to-rem(36);
+        height: px-to-rem(60);
+    }
+    &--block {
+        width: 100%;
+    }
+
+
+    &--primary {
+        background-color: color('primary');
+        border-color: color('primary');
+        color: color('white');
+
+        &:not(.#{$baseClass}--disabled):hover {
+            background-color: darken(color('primary'), 10%);
+            border-color: darken(color('primary'), 10%);
+            color: darken(color('white'), 10%);
+        }
+    }
+    &--white {
+        background-color: transparent;
+        border-color: color('white');
+        color: color('white');
+
+        &:not(.#{$baseClass}--disabled):hover {
+            border-color: darken(color('white'), 25%);
+            color: darken(color('white'), 25%);
+        }
+    }
+    &--default {
+        background-color: transparent;
+        border-color: color('grey');
+        color: color('black');
+
+        &:not(.#{$baseClass}--disabled):hover {
+            border-color: darken(color('grey'), 25%);
+            color: darken(color('black'), 25%);
+        }
+    }
+}
