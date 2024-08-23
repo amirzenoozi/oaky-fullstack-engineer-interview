@@ -8,5 +8,17 @@
         "featured": "Featured",
         "deals": "Deals",
         "upgrades": "Upgrades"
+    },
+    "featured": {
+        "title": "Recommended for you",
+        "description": "Handpicked experiences and deals"
+    },
+    "deals": {
+        "title": "The best deals",
+        "description": "Handpicked experiences and deals"
+    },
+    "upgrades": {
+        "title": "The best upgrades deals",
+        "description": "Handpicked experiences and deals"
     }
 }
