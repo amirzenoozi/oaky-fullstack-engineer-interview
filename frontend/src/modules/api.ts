@@ -1,17 +1,38 @@
-import HttpClient from './http'
+import client from '@/modules/apolloClient';
+import { gql } from '@apollo/client';
 
-const api = new HttpClient('')
-
-const getLatestMediums = async () => {
-	try {
-		const { data } = await api.get('https://v1.nocodeapi.com/amirzenoozi/medium/pdcAABzgJCHbJnoJ')
-		return data
-	} catch (err: any) {
-		console.log('Error', err)
-		throw err
-	}
-}
+const fetchDeals = async (page = 1, limit = 10, order = 'asc', orderBy = 'createdAt') => {
+	const GET_DEALS = gql`
+  query GetDeals($page: Int!, $limit: Int!, $order: String!, $orderBy: String!) {
+    deals(page: $page, limit: $limit, order: $order, orderBy: $orderBy) {
+      data {
+        uuid
+        title
+        description
+        imageUrl
+        price
+        discountPrice
+        category
+        createdAt
+      }
+      meta {
+		total_count
+		total_pages
+		current_page
+		limit
+		order_by
+		order
+      }
+    }
+  }
+`
+	const {data} = await client.query({
+		query: GET_DEALS,
+		variables: {page, limit, order, orderBy},
+	});
+	return data.deals;
+};
 
 export {
-	getLatestMediums,
+	fetchDeals,
 }
