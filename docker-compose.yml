@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3200:3200"
+    volumes:
+      - ./backend/database:/app/database
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      - API_URL=http://localhost:3200

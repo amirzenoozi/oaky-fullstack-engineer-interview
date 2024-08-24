@@ -15,6 +15,9 @@ RUN yarn install
 # Bundle app source
 COPY . .
 
+# Copy the SQLite database file into the container
+COPY ./database/database.sqlite ./database/database.sqlite
+
 # Build the application.
 RUN yarn build
 
