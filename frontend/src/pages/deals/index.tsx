@@ -10,19 +10,36 @@ import FlexRow from '@/components/flex-row';
 import FlexCol from '@/components/flex-col';
 import DealCard from '@/components/dealCard';
 import useDeals from '@/hooks/useDeals';
-import { HomeBannerImageURL, HomePageTabs } from './constants';
+import { HomeBannerImageURL } from './constants';
 import { Link } from 'react-router-dom';
 
 
 const Deals = (): JSX.Element => {
 	const CN = new ClassNames('deals');
-	const { t } = useTranslation(['deals']);
+	const { t } = useTranslation(['deals', 'common']);
 	const [pageNumber, setPageNumber] = useState(1)
 	const [limit, setLimit] = useState(10)
 	const [orderBy, setOrderBy] = useState('createdAt')
 	const [order, setOrder] = useState('desc')
 	const [activeTab, setActiveTab] = useState<string>('featured');
 	const { deals, fetching, error } = useDeals(pageNumber, limit, orderBy, order)
+	const HomePageTabs: {title: string, slug: string, disabled?: boolean}[] = [
+		{
+			title: t('tabs.featured'),
+			slug: 'featured',
+			disabled: false,
+		},
+		{
+			title: t('tabs.deals'),
+			slug: 'deals',
+			disabled: false,
+		},
+		{
+			title: t('tabs.upgrades'),
+			slug: 'upgrades',
+			disabled: false,
+		}
+	];
 
 	const handleTabChange = (slug: string) => {
 		setActiveTab(slug);
