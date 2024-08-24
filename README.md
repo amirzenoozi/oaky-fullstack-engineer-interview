@@ -1,13 +1,25 @@
 # Oaky FullStack Engineer Technical Task
 
+💻 **Technical Stack:** React | NestJs | GraphQL | Docker | SQLite | GitHub Actions | DockerCompose
+
+--------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) as Front side and [Nest](https://github.com/nestjs/nest) as backed side.
 This Projects Let you get verification Questions from the server and answer them with react application.
 
-
-## Dependencies
-- NodeJs
-- Yarn
-- Docker
+## Table of Contents
+- [Objectives](#objectives)
+- [Limitations](#limitations)
+- [Decisions and Explanations](#key-decisions-and-explanations)
+  - [Choice of Technologies](#1-choice-of-technologies)
+  - [Prioritization](#2-prioritization)
+  - [Deal Model](#3-database-structure---deal-model)
+  - [Deal Order Model](#4-database-structure---deal-order)
+  - [Multi-Lingual Apps](#5-multi-language-support)
+  - [Why GitHooks?](#6-githooks)
+  - [If I had more time](#7-if-i-had-more-time)
+- [Contributing Format](#contributing-format)
+- [Run it locally](#run-the-project-locally)
+- [Deployment](#deployment)
 
 
 ## Objectives
@@ -35,6 +47,12 @@ This Projects Let you get verification Questions from the server and answer them
 
 
 ## Key Decisions and Explanations
+I write down the key decisions and explanations to make sure that you can see the reasons behind the decisions I made.
+Also, I write all my plans to do here to finishing the task.
+However, according to the time limitation, It's kindly impossible to finish all the tasks, but I tried to finish the most important parts of the task and make the phase 1 ready for production.
+At the and of this section, I write down what I am going to do if I had more time to finish the task.
+Check ["If I had more time"](#7-if-i-had-more-time) section.
+
 ### 1. **Choice of Technologies**
 - **React**: in comparison to Angular and Vue, React has a less learning curve and is more flexible, since you only need to know the JavaScript.
 - **NestJs**: I chose NestJs because not only it is a modern, fast (built on top of Express) and powerful framework, but also it is written in TypeScript, which is a superset of JavaScript that adds optional static typing. Also, NestJs is one of the Oaky stack technologies.
@@ -45,13 +63,18 @@ This Projects Let you get verification Questions from the server and answer them
 - **Translations**: I used i18n to make the project more user-friendly and easy to use for different languages, also I am going to translate all the text to several languages by using public LLM tools.
 
 
-### 2. **Development Order**
-- **Frontend - Backend**: It's important to have clean and well-structured codebase from the beginning, so I started with creating the project base.
+### 2. **Prioritization**
+- **Code Base**: It's important to have clean and well-structured codebase from the beginning, so I started with creating the project base.
 - **Frontend - Deals Page**: As a first step, It should be necessary to start the development with this page, since it has a several common components with the other pages, including Btn, Banner, GridSystem, DealCard.
 - **Backend - Deals Model**: I created the model for the deals, since it is the main part of the project, And it helps to develop the more part of the task.
 - **Frontend - Deal Details**: I created the Deal Details page, since it is crucial to submit the order by the users.
 - **GitHub Actions**: I created the GitHub Actions to build the docker image, and If I had more time to write tests, we can make build stage dependent on the test stage, like the production stage.
 - **Dockerize**: I dockerized the project to make it more portable and easy to run on any machine.
+- **Backend - Order Model**: Starting Phase 2, I should create the Order Model to handle the user's orders.
+- **Frontend - Order Page**: I should create the Form Component + validations to let users book the deal.
+- **Postman Collection**: I should create a postman collection to make sure that everyone can test the API endpoints.
+- **Deployment**: I deployed the project on my server to make sure that the project is working as expected.
+
 
 
 ### 3. **Database Structure - Deal Model**
