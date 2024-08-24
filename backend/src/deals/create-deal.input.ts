@@ -10,6 +10,9 @@ export class CreateDealInput {
 	description: string;
 
 	@Field()
+	content: string;
+
+	@Field()
 	imageUrl: string;
 
 	@Field(() => DealCategory)
