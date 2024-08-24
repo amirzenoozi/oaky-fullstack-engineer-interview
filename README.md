@@ -35,7 +35,7 @@ This Projects Let you get verification Questions from the server and answer them
   - [x] Dockerfiles
   - [x] GitHub Actions to Run Tests
   - [x] GitHub Actions to Build Docker Image
-  - [x] Deploy On External Server: [EN]('https://oakyf.amirdouzandeh.me/en'), [NL]('https://oakyf.amirdouzandeh.me/nl')
+  - [x] Deploy On External Server: [EN](https://oakyf.amirdouzandeh.me/en), [NL](https://oakyf.amirdouzandeh.me/nl)
 
 
 ## Limitations
@@ -157,7 +157,7 @@ These images of This project will be built by GitHub Actions and pushed to the G
 If you want to deploy it on your domain, you need to rebuild the images with your own environment variables.
 The environment variables in these 2 projects should be set before the build process, so you need to use `args` in the Dockerfile to set the environment variables.
 In the current `docker-compose.yml` file, I use the images which are built by my server environment variables.
-check the deployments version, [English Version]('https://oakyf.amirdouzandeh.me/en'), [Dutch Version]('https://oakyf.amirdouzandeh.me/nl').
+check the deployments version, [English Version](https://oakyf.amirdouzandeh.me/en), [Dutch Version](https://oakyf.amirdouzandeh.me/nl).
 
 ### Deploy Using DockerCompose
 After you clone and build the project with your own environment variables, you can deploy it on your server by using the DockerCompose file.
