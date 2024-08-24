@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   backend:
+    container_name: oaky-nestjs-app
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -11,6 +12,7 @@ services:
       - ./backend/database:/app/database
 
   frontend:
+    container_name: oaky-react-app
     build:
       context: ./frontend
       dockerfile: Dockerfile
