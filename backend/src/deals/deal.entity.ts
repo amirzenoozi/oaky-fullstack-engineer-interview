@@ -30,6 +30,10 @@ export class Deal {
 	description: string;
 
 	@Field()
+	@Column('text')
+	content: string;
+
+	@Field()
 	@Column()
 	imageUrl: string;
 
