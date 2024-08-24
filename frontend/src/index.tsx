@@ -5,11 +5,13 @@ import Error from './pages/error';
 import Layout from './pages/layout';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from '@/store';
+import { ApolloProvider } from '@apollo/client';
+import client from '@/modules/apolloClient';
 import '@icon-park/react/styles/index.css';
 import './index.css';
 import './i18n';
-import { Provider } from 'react-redux';
-import { store } from '@/store';
 
 const router = createBrowserRouter([
 	{
@@ -43,9 +45,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
 	<Provider store={store}>
-		<React.StrictMode>
-			<RouterProvider router={router}/>
-		</React.StrictMode>
+		<ApolloProvider client={client}>
+			<React.StrictMode>
+				<RouterProvider router={router}/>
+			</React.StrictMode>
+		</ApolloProvider>
 	</Provider>
 );
 
