@@ -1,4 +1,4 @@
-name: NestJs App CI
+name: React App CI
 
 on:
   push:
