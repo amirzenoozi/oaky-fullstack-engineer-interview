@@ -12,6 +12,8 @@ import DealCard from '@/components/dealCard';
 import useDeals from '@/hooks/useDeals';
 import { HomeBannerImageURL } from './constants';
 import { Link } from 'react-router-dom';
+import MessageBox from '@/components/message-box/message-box';
+import { Loading, Empty, Error } from '@icon-park/react';
 
 
 const Deals = (): JSX.Element => {
@@ -61,24 +63,55 @@ const Deals = (): JSX.Element => {
 					<p>{ t(`${activeTab}.description`) }</p>
 				</div>
 				<Container>
-					<FlexRow>
-						{
-							deals.map((deal, index) => (
-								<FlexCol xs={12} sm={8} md={6} key={index}>
-									<Link to={`deals/${deal.uuid}`}>
-										<DealCard
-											title={deal.title}
-											description={deal.description}
-											price={deal.price}
-											offPrice={deal.discountPrice}
-											image={deal.imageUrl}
-											tag={deal.category}
-										/>
-									</Link>
-								</FlexCol>
-							))
-						}
-					</FlexRow>
+					{
+						deals.length > 0 && (
+							<FlexRow>
+								{
+									deals.map((deal, index) => (
+										<FlexCol xs={12} sm={8} md={6} key={index}>
+											<Link to={`deals/${deal.uuid}`}>
+												<DealCard
+													title={deal.title}
+													description={deal.description}
+													price={deal.price}
+													offPrice={deal.discountPrice}
+													image={deal.imageUrl}
+													tag={deal.category}
+												/>
+											</Link>
+										</FlexCol>
+									))
+								}
+							</FlexRow>
+						)
+					}
+					{
+						!fetching && deals.length === 0 && (
+							<MessageBox
+								icon={<Empty theme="outline" size="48" />}
+								title={t('common:noData.title')}
+								description={t('common:noData.description')}
+							/>
+						)
+					}
+					{
+						fetching && (
+							<MessageBox
+								icon={<Loading theme="outline" size="48" />}
+								title={t('common:loading.title')}
+								description={t('common:loading.description')}
+							/>
+						)
+					}
+					{
+						error && (
+							<MessageBox
+								icon={<Error theme="outline" size="48" />}
+								title={t('common:error.title')}
+								description={t('common:error.description')}
+							/>
+						)
+					}
 				</Container>
 			</section>
 		</>
