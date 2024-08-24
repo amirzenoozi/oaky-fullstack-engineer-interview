@@ -11,10 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Unit Tests
+      - name: Build & Push Image
         run: |
-          echo "Running Unit Tests"
-          cd back
-          yarn install
-          yarn run test
-          echo "Unit Tests Completed"
+          echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{secrets.DOCKERHUB_USERNAME}}" --password-stdin
+          docker image build . -t amirzenoozi/oaky-interview-backend:latest
+          docker push amirzenoozi/oaky-interview-backend:latest
