@@ -1,4 +1,4 @@
-import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
+import { Resolver, Query, Args, Mutation, Int } from '@nestjs/graphql';
 import { DealsService } from './deals.service';
 import { Deal } from './deal.entity';
 import { CreateDealInput } from './create-deal.input';
@@ -10,8 +10,8 @@ export class DealsResolver {
 
 	@Query(() => PaginatedDeals)
 	async deals(
-		@Args('page', { type: () => Number, defaultValue: 1 }) page: number,
-		@Args('limit', { type: () => Number, defaultValue: 10 }) limit: number,
+		@Args('page', { type: () => Int, defaultValue: 1 }) page: number,
+		@Args('limit', { type: () => Int, defaultValue: 10 }) limit: number,
 		@Args('orderBy', { type: () => String, defaultValue: 'createdAt' }) orderBy: keyof Deal,
 		@Args('order', { type: () => String, defaultValue: 'desc' }) order: 'asc' | 'desc',
 	): Promise<PaginatedDeals> {
