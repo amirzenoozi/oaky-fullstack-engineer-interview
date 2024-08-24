@@ -38,6 +38,7 @@ This Projects Let you get verification Questions from the server and answer them
 - **Frontend - Deals Page**: As a first step, It should be necessary to start the development with this page, since it has a several common components with the other pages, including Btn, Banner, GridSystem, DealCard.
 - **Backend - Deals Model**: I created the model for the deals, since it is the main part of the project, And it helps to develop the more part of the task.
 - **Frontend - Deal Details**: I created the Deal Details page, since it is crucial to submit the order by the users.
+- **GitHub Actions**: I created the GitHub Actions to build the docker image, and If I had more time to write tests, we can make build stage dependent on the test stage, like the production stage.
 - **Dockerize**: I dockerized the project to make it more portable and easy to run on any machine.
 
 ### 3. **Database Structure - Deal Model**
@@ -56,7 +57,7 @@ This Projects Let you get verification Questions from the server and answer them
 - **id**: The unique identifier of the deal order.
 - **dealId**: The deal id of the order.
 - **userId**: The user id of the order.
-- **status**: The status of the order, which can be one of the following values: `pending`, `completed`, `canceled`.
+- **status**: The status of the order, which can be one of the following values: `pending_acceptance`, `pending_payments`, `completed`, `canceled`, `rejected`.
 - **startDateTime**: The start date of the reserved deal.
 - **endDateTime**: The end date of the reserved deal.
 - **roomNumber**: The room number of the reserved deal.
@@ -86,6 +87,7 @@ Also, to make sure that every developer can see how to contribute to the project
 - **Order Page**: The Order Model is the second important part of the project, so I should create the Order Page to let the users submit the order, this model has relation with deal, and user in the real world scenario.
 - **User Model**: In the real world scenario, we should have a user model to handle the user's data, and the relation between the user and the order, also when we have a MultiLingual website, it means we MUST handle the different currencies, and this data should be stored for each user separately.
 - **PostMan Collection**: Having a postman collection can help the team to test the API endpoints and make sure that everything is working as expected.
+- **FetchingState**: In each UI application, it is important to handle a loading and show the user that we are fetching data by using sckeletons for cards and pages, or loading spinners for boxes and placeholder for images.
 
 ## Contributing Format
 Human Errors are the most common errors in the world, so I created a commit convention to make the project more readable and understandable.
