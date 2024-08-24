@@ -17,7 +17,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
       args:
-        REACT_APP_API_URL: http://oakyb.amirdouzandeh.me/graphql
+        REACT_APP_API_URL: https://oakyb.amirdouzandeh.me/graphql
     ports:
       - "3434:3000"
     depends_on:
