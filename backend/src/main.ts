@@ -4,9 +4,10 @@ import { AppModule } from './app.module';
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
 	app.enableCors({
-		origin: ['http://localhost:3000', 'http://*.amirdouzandeh.me/'],
+		origin: ['http://localhost:3000', 'https://oakyb.amirdouzandeh.me'],
 		methods: ['GET', 'POST', 'PUT', 'DELETE'],
 		allowedHeaders: ['Content-Type', 'Authorization'],
+		credentials: true,
 	});
 	await app.listen(3200);
 }
