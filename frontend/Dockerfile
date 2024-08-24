@@ -12,6 +12,10 @@ COPY package.json yarn.lock ./
 # Install application dependencies.
 RUN yarn install --production
 
+# Copy the environment variable manually
+ARG REACT_APP_API_URL
+ENV REACT_APP_API_URL=${REACT_APP_API_URL}
+
 # Install serve node package.
 RUN yarn global add serve
 
