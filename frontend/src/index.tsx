@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './pages/home';
-import Error from './pages/error';
-import Layout from './pages/layout';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from '@/store';
 import { ApolloProvider } from '@apollo/client';
 import client from '@/modules/apolloClient';
+import Home from './pages/home';
+import Error from './pages/error';
+import Layout from './pages/layout';
+import DealDetail from '@/pages/dealDetail';
 import '@icon-park/react/styles/index.css';
 import './index.css';
 import './i18n';
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
 			{
 				path: '/:lng',
 				element: <Home/>,
+				errorElement: <Error/>,
+			},
+			{
+				path: '/:lng/deals/:uuid',
+				element: <DealDetail />,
 				errorElement: <Error/>,
 			},
 		],
