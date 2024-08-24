@@ -1,7 +1,14 @@
 {
-    "download_cv": "Download CV",
-    "github": "Github",
-    "linkedin": "Linkedin",
-    "email": "Email",
-    "medium": "Medium Blog"
+    "noData": {
+        "title": "No data",
+        "description": "There is no Deals to display for you at the moment."
+    },
+    "error": {
+        "title": "Error",
+        "description": "Something went wrong. Please try again later."
+    },
+    "loading": {
+        "title": "Loading",
+        "description": "Please wait while we are fetching the data."
+    }
 }
