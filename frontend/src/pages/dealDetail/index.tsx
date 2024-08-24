@@ -5,7 +5,7 @@ import { ClassNames } from '@/modules/classNames';
 import { useParams } from 'react-router-dom';
 
 
-function DealDetails() {
+const DealDetails = (): JSX.Element => {
 	const CN = new ClassNames('deals');
 	const { t } = useTranslation(['deals']);
 	const { uuid, lng } = useParams();
