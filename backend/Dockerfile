@@ -25,4 +25,4 @@ RUN yarn build
 EXPOSE 3200
 
 # Run the application.
-CMD ["node", "dist/src/main.js"]
+CMD ["node", "dist/main.js"]
