@@ -5,7 +5,7 @@ import { BannerProps } from '@/components/banner/type';
 
 
 
-const BannerSection: React.FC<BannerProps> = ({ image, alt, children}) => {
+const BannerSection: React.FC<BannerProps> = ({ image, children}) => {
 	const CN = new ClassNames('banner');
 
 	return (
@@ -15,9 +15,13 @@ const BannerSection: React.FC<BannerProps> = ({ image, alt, children}) => {
 				...(image ? { backgroundImage: `url(${image})` } : {})
 			}}
 		>
-			<div className={CN.generate('content')}>
-				{ children }
-			</div>
+			{
+				children && (
+					<div className={CN.generate('content')}>
+						{children}
+					</div>
+				)
+			}
 		</section>
 	);
 }

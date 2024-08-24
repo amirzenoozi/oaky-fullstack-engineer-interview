@@ -49,7 +49,7 @@ const Deals = (): JSX.Element => {
 
 	return (
 		<>
-			<BannerSection image={HomeBannerImageURL} alt={t('deals.banner.title')}>
+			<BannerSection image={HomeBannerImageURL}>
 				<div className={CN.generate('bannerContent')}>
 					<h1>{ t('banner.title') }</h1>
 					<p>{ t('banner.description') }</p>
