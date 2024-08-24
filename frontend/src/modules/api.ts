@@ -33,6 +33,29 @@ const fetchDeals = async (page = 1, limit = 10, order = 'asc', orderBy = 'create
 	return data.deals;
 };
 
+const fetchDealByID = async (uuid: string) => {
+	const GET_DEAL = gql`
+	query GetDeal($uuid: String!) {
+		deal(uuid: $uuid) {
+			uuid
+			title
+			description
+			content
+			imageUrl
+			price
+			discountPrice
+			category
+		}
+	}
+`
+	const {data} = await client.query({
+		query: GET_DEAL,
+		variables: {uuid},
+	});
+	return data.deal;
+};
+
 export {
 	fetchDeals,
+	fetchDealByID,
 }
