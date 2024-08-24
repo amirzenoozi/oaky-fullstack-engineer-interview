@@ -12,10 +12,10 @@ export class DealsResolver {
 	async deals(
 		@Args('page', { type: () => Number, defaultValue: 1 }) page: number,
 		@Args('limit', { type: () => Number, defaultValue: 10 }) limit: number,
-		@Args('orderBy', { type: () => String, defaultValue: 'created_at' }) orderBy: string,
+		@Args('orderBy', { type: () => String, defaultValue: 'createdAt' }) orderBy: keyof Deal,
 		@Args('order', { type: () => String, defaultValue: 'desc' }) order: 'asc' | 'desc',
 	): Promise<PaginatedDeals> {
-		const { data, meta } = await this.dealsService.getActiveDeals(page, limit, orderBy, order);
+		const { data, meta } = await this.dealsService.getActiveDeals(page, limit, order, orderBy);
 		return { data, meta };
 	}
 

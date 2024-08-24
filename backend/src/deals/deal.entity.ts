@@ -1,6 +1,18 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from 'typeorm';
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType, registerEnumType } from '@nestjs/graphql';
 import { v4 as uuidv4 } from 'uuid';
+
+export enum DealCategory {
+	TOP_DEAL = 'top deal',
+	NEW_LIFT = 'only a few left!',
+	TOP_RATED = 'top rated',
+	OTHER = 'other',
+}
+
+registerEnumType(DealCategory, {
+	name: 'DealCategory',
+	description: 'The available categories for deals',
+});
 
 @ObjectType()
 @Entity()
@@ -21,9 +33,11 @@ export class Deal {
 	@Column()
 	imageUrl: string;
 
-	@Field()
-	@Column()
-	category: string;
+	@Field(() => DealCategory)
+	@Column({
+		type: 'text',
+	})
+	category: DealCategory;
 
 	@Field()
 	@Column({ type: 'float' })

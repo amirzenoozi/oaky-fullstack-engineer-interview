@@ -1,4 +1,5 @@
 import { InputType, Field } from '@nestjs/graphql';
+import { DealCategory } from './deal.entity';
 
 @InputType()
 export class CreateDealInput {
@@ -11,8 +12,8 @@ export class CreateDealInput {
 	@Field()
 	imageUrl: string;
 
-	@Field()
-	category: string;
+	@Field(() => DealCategory)
+	category: DealCategory;
 
 	@Field(() => Number)
 	price: number;
