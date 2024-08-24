@@ -1,0 +1,14 @@
+@import '@/styles/index';
+
+$baseClass: 'messageBox';
+
+.#{$baseClass} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: px-to-rem(32) px-to-rem(48);
+    text-align: center;
+    margin: 0 auto;
+    background-color: color('white');
+}
