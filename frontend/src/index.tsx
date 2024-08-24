@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { store } from '@/store';
 import { ApolloProvider } from '@apollo/client';
 import client from '@/modules/apolloClient';
-import Home from './pages/home';
+import Deals from './pages/deals';
 import Error from './pages/error';
 import Layout from './pages/layout';
 import DealDetail from '@/pages/dealDetail';
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: '/:lng',
-				element: <Home/>,
+				element: <Deals/>,
 				errorElement: <Error/>,
 			},
 			{

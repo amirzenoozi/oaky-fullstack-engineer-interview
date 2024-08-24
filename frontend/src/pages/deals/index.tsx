@@ -10,11 +10,11 @@ import FlexRow from '@/components/flex-row';
 import FlexCol from '@/components/flex-col';
 import DealCard from '@/components/dealCard';
 import useDeals from '@/hooks/useDeals';
-import { HomeBannerImageURL, HomePageTabs } from '@/pages/home/constants';
+import { HomeBannerImageURL, HomePageTabs } from './constants';
 import { Link } from 'react-router-dom';
 
 
-function Home() {
+const Deals = (): JSX.Element => {
 	const CN = new ClassNames('deals');
 	const { t } = useTranslation(['deals']);
 	const [pageNumber, setPageNumber] = useState(1)
@@ -68,4 +68,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default Deals;
