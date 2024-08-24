@@ -14,5 +14,5 @@ jobs:
       - name: Build & Push Image
         run: |
           echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{secrets.DOCKERHUB_USERNAME}}" --password-stdin
-          docker image build .\backend -t amirzenoozi/oaky-interview-backend:latest
+          docker image build ./backend -t amirzenoozi/oaky-interview-backend:latest
           docker push amirzenoozi/oaky-interview-backend:latest
