@@ -12,6 +12,10 @@ COPY package.json yarn.lock ./
 # Install application dependencies.
 RUN yarn install
 
+# Copy the environment variable manually
+ARG ALLOWED_ORIGIN
+ENV ALLOWED_ORIGIN=${ALLOWED_ORIGIN}
+
 # Bundle app source
 COPY . .
 
