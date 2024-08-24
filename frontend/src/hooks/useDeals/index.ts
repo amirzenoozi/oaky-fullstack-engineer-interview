@@ -7,7 +7,6 @@ const useDeals = ( page: number, limit: number, orderBy: string, order: string) 
 	const [fetching, setFetching] = useState<boolean>(true)
 	const [error, setError] = useState<any>(undefined)
 
-	// Get questions from API
 	useEffect(() => {
 		setFetching(true)
 		fetchDeals(page, limit, order, orderBy).then((res: any) => {
