@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchDeals } from '@/modules/api';
 import { DealItem } from '@/hooks/useDeals/type';
 
-const useDeals = (limit: number, page: number, orderBy: string, order: string) => {
+const useDeals = ( page: number, limit: number, orderBy: string, order: string) => {
 	const [items, setItems] = useState<DealItem[]>([])
 	const [fetching, setFetching] = useState<boolean>(true)
 	const [error, setError] = useState<any>(undefined)
@@ -10,8 +10,7 @@ const useDeals = (limit: number, page: number, orderBy: string, order: string) =
 	// Get questions from API
 	useEffect(() => {
 		setFetching(true)
-		fetchDeals(limit, page, orderBy, order).then((res: any) => {
-			console.log(res)
+		fetchDeals(page, limit, order, orderBy).then((res: any) => {
 			setItems(res.data)
 		}).catch((e) => {
 			setError(e)
