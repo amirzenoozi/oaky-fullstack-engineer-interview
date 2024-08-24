@@ -21,4 +21,4 @@ services:
     depends_on:
       - backend
     environment:
-      - API_URL=http://oakyb.amirdouzandeh.me/graphql
+      - REACT_APP_API_URL=http://oakyb.amirdouzandeh.me/graphql
