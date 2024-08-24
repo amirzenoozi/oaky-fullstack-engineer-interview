@@ -1,0 +1,14 @@
+{
+    "noData": {
+        "title": "Geen gegevens",
+        "description": "Er zijn momenteel geen deals om weer te geven."
+    },
+    "error": {
+        "title": "Fout",
+        "description": "Er is iets misgegaan. Probeer het later opnieuw."
+    },
+    "loading": {
+        "title": "Bezig met laden",
+        "description": "Even geduld terwijl we de gegevens ophalen."
+    }
+}

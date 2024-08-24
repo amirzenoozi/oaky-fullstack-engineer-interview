@@ -7,7 +7,7 @@ i18n.use(Backend)
 	.init(
 		{
 			lng: 'en',
-			fallbackLng: ['en'],
+			fallbackLng: ['en', 'nl'],
 			debug: false,
 			ns: ['common', 'deals'],
 			defaultNS: 'common',

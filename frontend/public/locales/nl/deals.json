@@ -1,0 +1,24 @@
+{
+    "banner": {
+        "title": "Welkom!",
+        "description": "We hopen dat u een goede dag heeft. Hier zijn enkele deals om uw verblijf in het Good Hotel te verbeteren.",
+        "button": "Krijg wat kortingen!"
+    },
+    "tabs": {
+        "featured": "Aanbevolen",
+        "deals": "Deals",
+        "upgrades": "Upgrades"
+    },
+    "featured": {
+        "title": "Aanbevolen voor u",
+        "description": "Handgeselecteerde ervaringen en deals"
+    },
+    "deals": {
+        "title": "De beste deals",
+        "description": "Handgeselecteerde ervaringen en deals"
+    },
+    "upgrades": {
+        "title": "De beste upgrade deals",
+        "description": "Handgeselecteerde ervaringen en deals"
+    }
+}
