@@ -23,6 +23,14 @@ This Projects Let you get verification Questions from the server and answer them
   - [x] GitHub Actions to Build Docker Image
   - [x] Deploy On External Server: [EN]('https://oakyf.amirdouzandeh.me/en'), [NL]('https://oakyf.amirdouzandeh.me/nl')
 
+
+## Limitations
+- I **ONLY** Had 6 hours to work on It.
+- I **ONLY** had a mobile design.
+- I **Must** prioritize the tasks based on the importance and the time limitation.
+- It is better to have a 100% completed small part than having a 50% completed big part.
+  - If it was a real world scenario, In this stage, User is able to at least see the all available deals and also take a look at their details.
+
 ## Key Decisions and Explanations
 ### 1. **Choice of Technologies**
 - **React**: in comparison to Angular and Vue, React has a less learning curve and is more flexible, since you only need to know the JavaScript.
@@ -98,6 +106,8 @@ You Just Need To Read [CONTRIBUTING.md](./CONTRIBUTING.md) and follow the steps.
 If you want to run the project locally, You don't need to open two different terminals to install the dependencies for each app and run them separately,
 you can use the `install.sh` and `runner.sh` scripts to install the dependencies and run the project.
 just follow these steps:
+
+
 #### Better Way:
 - ``` git clone git@github.com:amirzenoozi/oaky-fullstack-engineer-interview.git ```
 - ``` git config core.hooksPath .githooks ```
