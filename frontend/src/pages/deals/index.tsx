@@ -86,7 +86,7 @@ const Deals = (): JSX.Element => {
 						)
 					}
 					{
-						!fetching && deals.length === 0 && (
+						!error && !fetching && deals.length === 0 && (
 							<MessageBox
 								icon={<Empty theme="outline" size="48" />}
 								title={t('common:noData.title')}
