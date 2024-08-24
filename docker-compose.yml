@@ -2,22 +2,16 @@ version: '3.8'
 
 services:
   backend:
+    image: amirzenoozi/oaky-interview-backend:latest
     container_name: oaky-nestjs-app
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
     ports:
       - "3435:3200"
     volumes:
       - ./backend/database:/app/database
 
   frontend:
+    image: amirzenoozi/oaky-interview-frontend:latest
     container_name: oaky-react-app
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      args:
-        REACT_APP_API_URL: https://oakyb.amirdouzandeh.me/graphql
     ports:
       - "3434:3000"
     depends_on:
