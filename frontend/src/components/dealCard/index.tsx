@@ -8,6 +8,7 @@ import { priceParser } from '@/modules/utils';
 
 
 const DealCard: React.FC<DealCardProps> = ({
+	id,
    title,
    description,
    price,
